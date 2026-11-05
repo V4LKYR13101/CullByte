@@ -1,0 +1,168 @@
+<Application xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             x:Class="CullByte.App">
+  <Application.Resources>
+    <ResourceDictionary>
+      <ResourceDictionary.ThemeDictionaries>
+        <ResourceDictionary x:Key="Dark">
+          <SolidColorBrush x:Key="CullCanvas">#111820</SolidColorBrush>
+          <SolidColorBrush x:Key="CullPanel">#19242E</SolidColorBrush>
+          <SolidColorBrush x:Key="CullRecess">#0D151D</SolidColorBrush>
+          <SolidColorBrush x:Key="CullLine">#3A4D5A</SolidColorBrush>
+          <SolidColorBrush x:Key="CullText">#EEF5F7</SolidColorBrush>
+          <SolidColorBrush x:Key="CullMuted">#ACBEC9</SolidColorBrush>
+          <SolidColorBrush x:Key="CullAccent">#6BE4BF</SolidColorBrush>
+          <SolidColorBrush x:Key="CullAccentSurface">#22483F</SolidColorBrush>
+          <SolidColorBrush x:Key="CullHover">#293C49</SolidColorBrush>
+          <SolidColorBrush x:Key="CullError">#FFAC98</SolidColorBrush>
+        </ResourceDictionary>
+        <ResourceDictionary x:Key="Light">
+          <SolidColorBrush x:Key="CullCanvas">#F3F7F8</SolidColorBrush>
+          <SolidColorBrush x:Key="CullPanel">#FFFFFF</SolidColorBrush>
+          <SolidColorBrush x:Key="CullRecess">#E5EDF0</SolidColorBrush>
+          <SolidColorBrush x:Key="CullLine">#A0B3BE</SolidColorBrush>
+          <SolidColorBrush x:Key="CullText">#182B35</SolidColorBrush>
+          <SolidColorBrush x:Key="CullMuted">#48606E</SolidColorBrush>
+          <SolidColorBrush x:Key="CullAccent">#006A55</SolidColorBrush>
+          <SolidColorBrush x:Key="CullAccentSurface">#D1F1E6</SolidColorBrush>
+          <SolidColorBrush x:Key="CullHover">#E4EEF2</SolidColorBrush>
+          <SolidColorBrush x:Key="CullError">#A13323</SolidColorBrush>
+        </ResourceDictionary>
+      </ResourceDictionary.ThemeDictionaries>
+    </ResourceDictionary>
+  </Application.Resources>
+  <Application.Styles>
+    <FluentTheme>
+      <FluentTheme.Palettes>
+        <ColorPaletteResources x:Key="Dark" Accent="#08735E" />
+        <ColorPaletteResources x:Key="Light" Accent="#006A55" />
+      </FluentTheme.Palettes>
+    </FluentTheme>
+    <Style Selector="Window">
+      <Setter Property="Background" Value="{DynamicResource CullCanvas}" />
+      <Setter Property="Foreground" Value="{DynamicResource CullText}" />
+      <Setter Property="FontSize" Value="13" />
+    </Style>
+    <Style Selector="Border.mobile-canvas">
+      <Setter Property="Background" Value="{DynamicResource CullCanvas}" />
+    </Style>
+    <Style Selector="Button.touch">
+      <Setter Property="MinHeight" Value="48" />
+      <Setter Property="Padding" Value="12,7" />
+      <Setter Property="VerticalContentAlignment" Value="Center" />
+    </Style>
+    <Style Selector="Button.mobile-row">
+      <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+      <Setter Property="HorizontalAlignment" Value="Stretch" />
+    </Style>
+    <Style Selector="Border.surface">
+      <Setter Property="Background" Value="{DynamicResource CullPanel}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource CullLine}" />
+      <Setter Property="BorderThickness" Value="1" />
+      <Setter Property="CornerRadius" Value="9" />
+    </Style>
+    <Style Selector="Border.recess">
+      <Setter Property="Background" Value="{DynamicResource CullRecess}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource CullLine}" />
+    </Style>
+    <Style Selector="TextBlock.muted">
+      <Setter Property="Foreground" Value="{DynamicResource CullMuted}" />
+    </Style>
+    <Style Selector="TextBlock.emphasis">
+      <Setter Property="Foreground" Value="{DynamicResource CullAccent}" />
+    </Style>
+    <Style Selector="TextBlock.error">
+      <Setter Property="Foreground" Value="{DynamicResource CullError}" />
+    </Style>
+    <Style Selector="Button.quiet">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderBrush" Value="Transparent" />
+    </Style>
+    <Style Selector="Button:not(.accent):not(.quiet)">
+      <Setter Property="Background" Value="{DynamicResource CullPanel}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource CullLine}" />
+      <Setter Property="Foreground" Value="{DynamicResource CullText}" />
+    </Style>
+    <Style Selector="Button:disabled /template/ ContentPresenter#PART_ContentPresenter">
+      <Setter Property="Background" Value="{DynamicResource CullRecess}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource CullLine}" />
+      <Setter Property="Foreground" Value="{DynamicResource CullMuted}" />
+      <Setter Property="Opacity" Value="0.52" />
+    </Style>
+    <Style Selector="TextBox">
+      <Setter Property="Background" Value="{DynamicResource CullPanel}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource CullLine}" />
+      <Setter Property="PlaceholderForeground" Value="{DynamicResource CullText}" />
+    </Style>
+    <Style Selector="Button.tab-close">
+      <Setter Property="Padding" Value="4,0" />
+      <Setter Property="MinHeight" Value="20" />
+      <Setter Property="MinWidth" Value="21" />
+      <Setter Property="FontSize" Value="14" />
+    </Style>
+    <Style Selector="ListBox.compact">
+      <Setter Property="Background" Value="Transparent" />
+      <Setter Property="BorderThickness" Value="0" />
+    </Style>
+    <Style Selector="ListBox.compact ListBoxItem">
+      <Setter Property="Padding" Value="7,5" />
+      <Setter Property="MinHeight" Value="28" />
+      <Setter Property="HorizontalContentAlignment" Value="Stretch" />
+    </Style>
+    <Style Selector="TabControl.scan-tabs">
+      <Setter Property="ItemsPanel">
+        <ItemsPanelTemplate><StackPanel Orientation="Horizontal" /></ItemsPanelTemplate>
+      </Setter>
+      <Setter Property="Template">
+        <ControlTemplate>
+          <DockPanel LastChildFill="True">
+            <Border DockPanel.Dock="Top" Classes="recess" BorderThickness="0,1,0,1" Padding="13,5,13,0">
+              <ScrollViewer HorizontalScrollBarVisibility="Auto" VerticalScrollBarVisibility="Disabled">
+                <ItemsPresenter Name="PART_ItemsPresenter" ItemsPanel="{TemplateBinding ItemsPanel}" />
+              </ScrollViewer>
+            </Border>
+            <ContentPresenter Name="PART_SelectedContentHost"
+                              Content="{TemplateBinding SelectedContent}"
+                              ContentTemplate="{TemplateBinding SelectedContentTemplate}" />
+          </DockPanel>
+        </ControlTemplate>
+      </Setter>
+    </Style>
+    <Style Selector="TabItem.scan-tab">
+      <Setter Property="Foreground" Value="{DynamicResource CullMuted}" />
+      <Setter Property="MinHeight" Value="31" />
+      <Setter Property="MinWidth" Value="0" />
+      <Setter Property="Padding" Value="0" />
+      <Setter Property="Template">
+        <ControlTemplate>
+          <Border Name="TabChrome" Margin="0,0,6,0" Padding="9,2,4,3"
+                  Background="{DynamicResource CullPanel}"
+                  BorderBrush="{DynamicResource CullLine}"
+                  BorderThickness="1,1,1,0" CornerRadius="7,7,0,0" MinHeight="30">
+            <Grid RowDefinitions="*,2">
+              <ContentPresenter Content="{TemplateBinding Header}"
+                                ContentTemplate="{TemplateBinding HeaderTemplate}" VerticalAlignment="Center" />
+              <Border Name="TabIndicator" Grid.Row="1" CornerRadius="1" Margin="0,0,5,0" />
+            </Grid>
+          </Border>
+        </ControlTemplate>
+      </Setter>
+    </Style>
+    <Style Selector="TabItem.scan-tab:pointerover /template/ Border#TabChrome">
+      <Setter Property="Background" Value="{DynamicResource CullHover}" />
+    </Style>
+    <Style Selector="TabItem.scan-tab:selected">
+      <Setter Property="Foreground" Value="{DynamicResource CullText}" />
+    </Style>
+    <Style Selector="TabItem.scan-tab:selected /template/ Border#TabChrome">
+      <Setter Property="Background" Value="{DynamicResource CullAccentSurface}" />
+      <Setter Property="BorderBrush" Value="{DynamicResource CullAccent}" />
+    </Style>
+    <Style Selector="TabItem.scan-tab:selected /template/ Border#TabIndicator">
+      <Setter Property="Background" Value="{DynamicResource CullAccent}" />
+    </Style>
+    <Style Selector="TabItem.scan-tab:focus-visible /template/ Border#TabChrome">
+      <Setter Property="BorderBrush" Value="{DynamicResource CullAccent}" />
+    </Style>
+  </Application.Styles>
+</Application>
