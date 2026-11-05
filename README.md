@@ -49,6 +49,3 @@ Choose a folder through Android’s picker to scan it. The treemap and largest-i
 dotnet run --project CullByte.csproj -- --headless --scan "D:\Projects" --ads --save "projects.cullscan"
 dotnet run --project CullByte.csproj -- --headless --load "projects.cullscan" --filter "*.zip;>500mb" --report "archives.csv"
 ```
-
-
-See [the SpaceSniffer feature map](FEATURE-MAP.md) for behavior details and compatibility differences.
